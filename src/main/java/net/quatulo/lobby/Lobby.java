@@ -1,5 +1,6 @@
 package net.quatulo.lobby;
 
+import net.quatulo.lobby.cmds.CommandAdmin;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class Lobby extends JavaPlugin {
@@ -20,7 +21,8 @@ public class Lobby extends JavaPlugin {
     }
 
     private void init() {
-
+        getCommand("admin").setExecutor(new CommandAdmin());
+        getCommand("build").setExecutor(new CommandAdmin());
     }
 
     public static Lobby getInstance() {

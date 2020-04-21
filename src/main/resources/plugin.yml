@@ -1,0 +1,7 @@
+name: Lobby
+author: Florian
+version: 2.0
+main: net.quatulo.lobby.Lobby
+commands:
+  set:
+  admin:
