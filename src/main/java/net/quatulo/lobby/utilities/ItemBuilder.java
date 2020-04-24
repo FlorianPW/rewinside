@@ -1,5 +1,6 @@
 package net.quatulo.lobby.utilities;
 
+import net.quatulo.lobby.NBTItem;
 import org.bukkit.Color;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
@@ -84,6 +85,14 @@ public class ItemBuilder {
     public ItemBuilder addLoreLine(String loreLine) {
         this.loreList.add(loreLine);
 
+        return this;
+    }
+
+    public ItemBuilder setNBTString(String key, String value) {
+        NBTItem nbtItem = new NBTItem(create());
+        nbtItem.setString(key, value);
+        this.itemStack = nbtItem.getItem();
+        this.itemMeta = nbtItem.getItem().getItemMeta();
         return this;
     }
 

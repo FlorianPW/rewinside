@@ -14,31 +14,17 @@
 
     <repositories>
         <repository>
-            <id>jcenter</id>
-            <name>jcenter-bintray</name>
-            <url>https://jcenter.bintray.com</url>
-        </repository>
-        <repository>
-            <id>papermc</id>
-            <url>https://papermc.io/repo/repository/maven-public/</url>
+            <id>quatulo-repo</id>
+            <url>http://192.42.253.179:8081/repository/maven-public/</url>
         </repository>
     </repositories>
 
 
     <dependencies>
-        <!-- Paper -->
+        <!-- PaperSpigot -->
         <dependency>
             <groupId>org.spigotmc</groupId>
-            <artifactId>spigot-api</artifactId>
-            <version>1.8.8-R0.1-SNAPSHOT</version>
-            <scope>provided</scope>
-        </dependency>
-
-        <!--This adds the Bukkit API artifact to the build -->
-        <!-- Do not include this in the pom.xml file if the Spigot API is already added -->
-        <dependency>
-            <groupId>org.bukkit</groupId>
-            <artifactId>bukkit</artifactId>
+            <artifactId>spigot</artifactId>
             <version>1.8.8-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
@@ -56,12 +42,24 @@
             <version>3.4.2</version>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>ru.tehkode</groupId>
+            <artifactId>PermissionsEx</artifactId>
+            <version>1.23.4</version>
+            <scope>provided</scope>
+        </dependency>
         <!-- json -->
         <dependency>
             <groupId>org.json</groupId>
             <artifactId>json</artifactId>
             <version>20180130</version>
             <scope>compile</scope>
+        </dependency>
+        <!-- Effectlib -->
+        <dependency>
+            <groupId>de.slikey</groupId>
+            <artifactId>EffectLib</artifactId>
+            <version>6.3</version>
         </dependency>
         <!-- Lombok -->
         <dependency>
@@ -77,6 +75,8 @@
             <scope>compile</scope>
             <version>3.11.0</version>
         </dependency>
+        <!-- Core -->
+
         <!-- JSON Simple -->
         <dependency>
             <groupId>com.googlecode.json-simple</groupId>

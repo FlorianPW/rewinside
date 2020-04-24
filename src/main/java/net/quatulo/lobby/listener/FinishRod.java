@@ -11,7 +11,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerFishEvent;
 import org.bukkit.util.Vector;
 
-public class FishingRodListener implements Listener {
+public class FinishRod implements Listener {
 
     @EventHandler
     public void handle(PlayerFishEvent e) {

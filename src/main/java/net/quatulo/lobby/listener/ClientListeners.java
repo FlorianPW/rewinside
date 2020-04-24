@@ -14,6 +14,7 @@ public class ClientListeners implements Listener {
         Player client = event.getPlayer();
         if(event.isSneaking() == true) {
             client.sendMessage(new PrefixBuilder("§3Lobby").build() + "lobby_mlg_final_listener");
+
         }
     }
     @EventHandler

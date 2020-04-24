@@ -11,14 +11,18 @@ public class LobbyManager {
 
     private static FileBuilder fileBuilder = new FileBuilder("plugins//Lobby//spawns.yml");
 
+    private static List<Player> hidderlist = new ArrayList<>();
+
     private static List<Player> buildlist = new ArrayList<>();
 
 
     public static List<Player> getBuildlist() {
         return buildlist;
     }
-
     public static FileBuilder getFileBuilder() {
         return fileBuilder;
+    }
+    public static List<Player> getHidderlist() {
+        return hidderlist;
     }
 }
