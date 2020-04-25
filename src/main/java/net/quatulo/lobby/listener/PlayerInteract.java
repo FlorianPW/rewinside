@@ -14,6 +14,8 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
+import org.bukkit.event.player.PlayerArmorStandManipulateEvent;
+import org.bukkit.event.player.PlayerInteractAtEntityEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
@@ -110,6 +112,22 @@ public class PlayerInteract implements Listener {
                 return;
             }
 
+        }
+
+    }
+    @EventHandler
+    public void onInteractAtEntity(PlayerInteractAtEntityEvent event) {
+        Player client = event.getPlayer();
+
+        if(event.equals(Action.RIGHT_CLICK_AIR)) {
+        }
+    }
+
+    @EventHandler
+    public void onInteractAtEntity(PlayerArmorStandManipulateEvent event) {
+        Player client = event.getPlayer();
+        if(!LobbyManager.getBuildlist().contains(client)) {
+            event.setCancelled(true);
         }
     }
 }

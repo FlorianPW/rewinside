@@ -40,7 +40,7 @@ public class Inventoryclick implements Listener {
                     client.setVelocity(new Vector(0.0D, 1.0D, 0.0D));
                     client.playSound(client.getLocation(), Sound.ENDERDRAGON_WINGS, 1.0F, 1.0F);
                     client.playEffect(client.getLocation(), Effect.SPLASH, 1000);
-
+                    client.closeInventory();
                     Bukkit.getScheduler().runTaskLater(Lobby.getInstance(), new Runnable() {
                         public void run() {
                             client.teleport(new WarpManager("Spawn").getWarp());
@@ -57,7 +57,7 @@ public class Inventoryclick implements Listener {
                     client.setVelocity(new Vector(0.0D, 1.0D, 0.0D));
                     client.playSound(client.getLocation(), Sound.ENDERDRAGON_WINGS, 1.0F, 1.0F);
                     client.playEffect(client.getLocation(), Effect.SPLASH, 1000);
-
+                    client.closeInventory();
                     Bukkit.getScheduler().runTaskLater(Lobby.getInstance(), new Runnable() {
                         public void run() {
                             client.teleport(new WarpManager("bedwars").getWarp());
@@ -74,7 +74,7 @@ public class Inventoryclick implements Listener {
                     client.setVelocity(new Vector(0.0D, 1.0D, 0.0D));
                     client.playSound(client.getLocation(), Sound.ENDERDRAGON_WINGS, 1.0F, 1.0F);
                     client.playEffect(client.getLocation(), Effect.SPLASH, 1000);
-
+                    client.closeInventory();
                     Bukkit.getScheduler().runTaskLater(Lobby.getInstance(), new Runnable() {
                         public void run() {
                             client.teleport(new WarpManager("mlgrush").getWarp());
@@ -92,7 +92,7 @@ public class Inventoryclick implements Listener {
                     client.setVelocity(new Vector(0.0D, 1.0D, 0.0D));
                     client.playSound(client.getLocation(), Sound.ENDERDRAGON_WINGS, 1.0F, 1.0F);
                     client.playEffect(client.getLocation(), Effect.SPLASH, 1000);
-
+                    client.closeInventory();
                     Bukkit.getScheduler().runTaskLater(Lobby.getInstance(), new Runnable() {
                         public void run() {
                             client.teleport(new WarpManager("bedwars").getWarp());
@@ -110,7 +110,7 @@ public class Inventoryclick implements Listener {
                     client.setVelocity(new Vector(0.0D, 1.0D, 0.0D));
                     client.playSound(client.getLocation(), Sound.ENDERDRAGON_WINGS, 1.0F, 1.0F);
                     client.playEffect(client.getLocation(), Effect.SPLASH, 1000);
-
+                    client.closeInventory();
                     Bukkit.getScheduler().runTaskLater(Lobby.getInstance(), new Runnable() {
                         public void run() {
                             client.teleport(new WarpManager("arena").getWarp());

@@ -13,8 +13,9 @@ import org.bukkit.Bukkit;
 import org.bukkit.Color;
 import org.bukkit.Location;
 import org.bukkit.Material;
-import org.bukkit.entity.ArmorStand;
+import org.bukkit.entity.*;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.bukkit.scheduler.BukkitScheduler;
 
 public class Lobby extends JavaPlugin {
 
@@ -66,4 +67,19 @@ public class Lobby extends JavaPlugin {
         System.out.println("(_______/(_______)|/ \\___/ |/ \\___/    \\_/   \\_______)   \\_/   \\_______)   )_(   (_______/|/     \\|");
         System.out.println("Coded by Quatulo Network Development Team");
     }
+
+    private void setupScheduler() {
+        BukkitScheduler scheduler = Bukkit.getScheduler();
+
+//        scheduler.runTaskTimerAsynchronously(this, ScoreboardService::update, 0L, 4L);
+        scheduler.runTaskTimerAsynchronously(this, () -> {
+            for (Entity entity : Bukkit.getWorld("world").getEntities()) {
+                if (entity instanceof Monster || entity instanceof Animals || entity instanceof Item) {
+                    entity.remove();
+                }
+            }
+        }, 10L, 10L);
+
+    }
+
 }

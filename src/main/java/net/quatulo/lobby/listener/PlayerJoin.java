@@ -4,10 +4,7 @@ import de.slikey.effectlib.util.ParticleEffect;
 import net.quatulo.lobby.IHologram;
 import net.quatulo.lobby.Lobby;
 import net.quatulo.lobby.NBTItem;
-import net.quatulo.lobby.utilities.ItemBuilder;
-import net.quatulo.lobby.utilities.LabySubtitles;
-import net.quatulo.lobby.utilities.LobbyManager;
-import net.quatulo.lobby.utilities.WarpManager;
+import net.quatulo.lobby.utilities.*;
 import org.bukkit.*;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -36,7 +33,6 @@ public class PlayerJoin implements Listener {
             item = new NBTItem(new ItemBuilder(Material.NAME_TAG, 1, 0).setDisplayName("§5Nick §8➜ §aAktivieren").create());
             item.setString("LOBBY_INTERACT_EVENT", "nick");
             client.getInventory().setItem(22, item.getItem());
-            client.setAllowFlight(true);
         }
     }
 
@@ -49,6 +45,7 @@ public class PlayerJoin implements Listener {
         client.setHealthScale(20);
         client.setGameMode(GameMode.ADVENTURE);
         client.setHealth(20);
+        new ScoreboardService(client).setScoreboard();
         new BukkitRunnable() {
             @Override
             public void run() {
@@ -62,9 +59,18 @@ public class PlayerJoin implements Listener {
             client.getInventory().setBoots(new ItemBuilder(Material.LEATHER_BOOTS, 1, 0).setColor(Color.RED).setDisplayName("§cTeam").create());
         }
 
+        if(client.hasPermission("core.lobby.fly")) {
+            client.setAllowFlight(true);
+        }
 
-        Location location = new Location(Bukkit.getWorld("leer1"), 733.5, 134, 716.5);
-        IHologram hologram = new IHologram(location, "§8§m---------------", "§7", "§aWillkommen auf §6§lQuatulo", "§7", "§8§m---------------");
+
+        Location location = new Location(Bukkit.getWorld("leer1"), 732.0, 134.0, 721.0);
+        IHologram hologram = new IHologram(location,
+                "§6§lDein Ranking§7:",
+                new PrefixBuilder("§cBedWars").build() + "#1",
+                new PrefixBuilder("§3MLGRush").build() + "#2",
+                new PrefixBuilder("§bArena").build() + "#3",
+                new PrefixBuilder("§aBuildFFA").build() + "#4");
         hologram.showPlayer(client);
     }
 }
