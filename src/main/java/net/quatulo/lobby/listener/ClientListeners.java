@@ -1,6 +1,9 @@
 package net.quatulo.lobby.listener;
 
+import net.quatulo.lobby.IHologram;
 import net.quatulo.lobby.utilities.PrefixBuilder;
+import org.bukkit.Bukkit;
+import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -13,7 +16,9 @@ public class ClientListeners implements Listener {
     public void onSneak(PlayerToggleSneakEvent event) {
         Player client = event.getPlayer();
         if(event.isSneaking() == true) {
-            client.sendMessage(new PrefixBuilder("§3Lobby").build() + "lobby_mlg_final_listener");
+
+            IHologram hologram = new IHologram(client.getLocation(), "§8§m---------------", "§7", "§aWillkommen auf §6§lQuatulo", "§7", "§8§m---------------");
+            hologram.showPlayerTemp(client,3);
 
         }
     }

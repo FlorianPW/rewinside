@@ -23,6 +23,7 @@ public class Lobby extends JavaPlugin {
     @Override
     public void onEnable() {
         instance = this;
+        sendConsoleMessage();
         register();
 
     }
@@ -52,5 +53,17 @@ public class Lobby extends JavaPlugin {
 
     public static Lobby getInstance() {
         return instance;
+    }
+
+    private void sendConsoleMessage() {
+        System.out.println(" _        _______  ______   ______            _______           _______ _________ _______  _______ ");
+        System.out.println("( \\      (  ___  )(  ___ \\ (  ___ \\ |\\     /|(  ____ \\|\\     /|(  ____ \\\\__   __/(  ____ \\(       )");
+        System.out.println("| (      | (   ) || (   ) )| (   ) )( \\   / )| (    \\/( \\   / )| (    \\/   ) (   | (    \\/| () () |");
+        System.out.println("| |      | |   | || (__/ / | (__/ /  \\ (_) / | (_____  \\ (_) / | (_____    | |   | (__    | || || |");
+        System.out.println("| |      | |   | ||  __ (  |  __ (    \\   /  (_____  )  \\   /  (_____  )   | |   |  __)   | |(_)| |");
+        System.out.println("| |      | |   | || (  \\ \\ | (  \\ \\    ) (         ) |   ) (         ) |   | |   | (      | |   | |");
+        System.out.println("| (____/\\| (___) || )___) )| )___) )   | |   /\\____) |   | |   /\\____) |   | |   | (____/\\| )   ( |");
+        System.out.println("(_______/(_______)|/ \\___/ |/ \\___/    \\_/   \\_______)   \\_/   \\_______)   )_(   (_______/|/     \\|");
+        System.out.println("Coded by Quatulo Network Development Team");
     }
 }

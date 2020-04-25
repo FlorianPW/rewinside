@@ -45,15 +45,13 @@ public class CommandBuild implements CommandExecutor {
                                 client.setGameMode(GameMode.CREATIVE);
                             }
                         } else if (args[0].equalsIgnoreCase("off")) {
-                            if (!LobbyManager.getBuildlist().contains(client)) {
-                                new LobbyManager().getBuildlist().remove(client);
-                                client.sendMessage(new PrefixBuilder("§3Lobby").build() + "Du kannst nun nicht mehr bauen.");
-                                client.getInventory().clear();
-                                setInventory(client);
-                                client.teleport(new WarpManager("spawn").getWarp());
-                                client.setGameMode(GameMode.SURVIVAL);
-                                break;
-                            }
+                            new LobbyManager().getBuildlist().remove(client);
+                            client.sendMessage(new PrefixBuilder("§3Lobby").build() + "Du kannst nun nicht mehr bauen.");
+                            client.getInventory().clear();
+                            setInventory(client);
+                            client.teleport(new WarpManager("spawn").getWarp());
+                            client.setGameMode(GameMode.SURVIVAL);
+                            break;
                         }
                 }
             }

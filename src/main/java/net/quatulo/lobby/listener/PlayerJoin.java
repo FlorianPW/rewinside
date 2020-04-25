@@ -29,7 +29,7 @@ public class PlayerJoin implements Listener {
         client.getInventory().setItem(4, item.getItem());
 
         client.getInventory().setItem(6, new ItemBuilder(Material.NETHER_STAR, 1, 0).setDisplayName("§bSwitcher").create());
-        client.getInventory().setItem(8, new ItemBuilder(Material.SKULL_ITEM, 1, 3).setOwner(client.getName()).setDisplayName("§aFreunde").create());
+        client.getInventory().setItem(8, new ItemBuilder(Material.SKULL_ITEM, 1, 3).setOwner(client.getName()).setDisplayName("§aProfil").setNBTString("LOBBY_INTERACT_EVENT", "profile").create());
 
         if (client.hasPermission("core.vip")) {
 
@@ -64,7 +64,7 @@ public class PlayerJoin implements Listener {
 
 
         Location location = new Location(Bukkit.getWorld("leer1"), 733.5, 134, 716.5);
-        IHologram hologram = new IHologram(location, "§8§m---------------", " ", "§cTest Text", "§c", "§8§m---------------");
+        IHologram hologram = new IHologram(location, "§8§m---------------", "§7", "§aWillkommen auf §6§lQuatulo", "§7", "§8§m---------------");
         hologram.showPlayer(client);
     }
 }
