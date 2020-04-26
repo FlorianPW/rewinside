@@ -5,6 +5,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByBlockEvent;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
+import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.player.PlayerItemDamageEvent;
 
@@ -22,5 +23,8 @@ public class PlayerDamage implements Listener {
     public void onDamage(EntityDamageByEntityEvent event) {
         event.setCancelled(true);
     }
-
+    @EventHandler
+    public void onEntity(EntityDamageEvent event) {
+        event.setCancelled(true);
+    }
 }
